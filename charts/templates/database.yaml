@@ -17,3 +17,14 @@ spec:
   databaseAccountOfferType: Standard
   locations:
     - locationName: eastus
+  operatorSpec:
+    secrets:
+      primaryMasterKey:
+        name: db-secret
+        key: primarymasterkey
+      secondaryMasterKey:
+        name: db-secret
+        key: secondarymasterkey
+      documentEndpoint:
+        name: db-secret
+        key: endpoint

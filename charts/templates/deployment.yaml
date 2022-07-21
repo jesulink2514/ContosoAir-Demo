@@ -36,6 +36,17 @@ spec:
             - name: http
               containerPort: {{ .Values.containerPort }}
               protocol: TCP
+
+          env:
+            - name: COSMOS_DB_AUTH_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: primarymasterkey            
+            
+            - name: COSMOS_DB_NAME
+              value: contosoairdbaccount
+
           livenessProbe:
             httpGet:
               path: /
